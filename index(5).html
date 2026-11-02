@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lisa Goswami | Forensic Science Portfolio</title>
+<meta name="description" content="Portfolio of Lisa Goswami, BSc Forensic Science student at Lovely Professional University, aiming to become a Scientific Assistant at CFSL.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔍</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c1218; --panel:#141d27; --ink:#e9eef3; --muted:#93a2b1; --line:#243342;
+  --tape:#f2c230; --tape-ink:#14110a; --uv:#8f7bff; --ridge:#2b3d50;
+  --head:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+:root[data-theme="light"]{
+  --bg:#f3f3ef; --panel:#ffffff; --ink:#15202a; --muted:#566574; --line:#d9dcdf;
+  --uv:#4b2fb0; --ridge:#cfd5dc;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.65;font-size:1.0625rem}
+a{color:var(--tape);text-underline-offset:3px}
+:root[data-theme="light"] a:not(.btn){color:#8a5a00}
+a:focus-visible,button:focus-visible{outline:3px solid var(--uv);outline-offset:3px;border-radius:4px}
+.wrap{max-width:64rem;margin:0 auto;padding:0 1.25rem}
+
+.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:3.5rem}
+.brand{font-family:var(--head);font-weight:700;font-size:1.4rem;letter-spacing:.02em;color:var(--ink);text-decoration:none}
+.nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--muted);text-decoration:none;font-size:.95rem;font-weight:500}
+.nav ul a:hover{color:var(--tape)}
+.toggle{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:.3rem .85rem;font:inherit;font-size:.85rem;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:4.5rem 0 4rem}
+.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center}
+.hero h1{font-family:var(--head);font-weight:700;font-size:clamp(3.4rem,10vw,6.4rem);line-height:.92;margin:0 0 1rem;letter-spacing:-.005em}
+.role{font-size:1.15rem;color:var(--muted);margin:0 0 1.75rem;max-width:32rem}
+.actions{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:.4rem;font-weight:600;text-decoration:none;border:2px solid var(--tape);color:var(--tape)}
+.btn.primary{background:var(--tape);color:var(--tape-ink)}
+:root[data-theme="light"] .btn{border-color:#14110a;color:#14110a}
+:root[data-theme="light"] .btn.primary{background:var(--tape)}
+.btn:hover{filter:brightness(1.12)}
+
+.print{position:relative;aspect-ratio:1;max-width:23rem;width:100%;justify-self:center;border-radius:50%;
+  background:repeating-radial-gradient(ellipse 100% 82% at 44% 56%,transparent 0 8px,var(--ridge) 8px 10px);
+  -webkit-mask-image:radial-gradient(circle,#000 55%,transparent 71%);mask-image:radial-gradient(circle,#000 55%,transparent 71%);
+  transform:rotate(-16deg)}
+.scan{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:50%}
+.scan::after{content:"";position:absolute;left:0;right:0;height:14%;top:-14%;
+  background:linear-gradient(to bottom,transparent,color-mix(in srgb,var(--uv) 55%,transparent),transparent);
+  animation:sweep 5s ease-in-out infinite}
+@keyframes sweep{0%{top:-14%}55%,100%{top:100%}}
+.printwrap{position:relative;display:grid;place-items:center}
+.printwrap .print{grid-area:1/1}
+.printwrap .scanbox{grid-area:1/1;width:100%;max-width:23rem;aspect-ratio:1;position:relative;overflow:hidden;border-radius:50%;
+  -webkit-mask-image:radial-gradient(circle,#000 52%,transparent 70%);mask-image:radial-gradient(circle,#000 52%,transparent 70%)}
+.scanbox::after{content:"";position:absolute;left:0;right:0;height:12%;top:-12%;
+  background:linear-gradient(to bottom,transparent,color-mix(in srgb,var(--uv) 60%,transparent),transparent);animation:sweep 5s ease-in-out infinite}
+.print .scan{display:none}
+
+/* Evidence tape */
+.tape{background:repeating-linear-gradient(-45deg,var(--tape) 0 22px,#16130a 22px 44px);padding:.55rem 0;transform:rotate(-1deg);margin:0 -2rem;border-block:2px solid #16130a}
+.tape p{margin:0;max-width:none;text-align:center;font-family:var(--head);font-weight:700;font-size:1.25rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tape-ink);background:var(--tape);width:fit-content;margin-inline:auto;padding:0 1.2rem}
+
+section{padding:3.75rem 0;border-bottom:1px solid var(--line)}
+h2{font-family:var(--head);font-weight:700;font-size:2.3rem;line-height:1;margin:0 0 1.25rem;letter-spacing:.01em}
+.grid{display:grid;grid-template-columns:1fr 2.2fr;gap:2rem}
+p{margin:0 0 1rem;max-width:42rem}
+
+/* Evidence-tag cards */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.card{position:relative;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--tape);border-radius:.4rem;padding:1.1rem 1.2rem 1rem}
+.card::before{content:"";position:absolute;top:.55rem;right:.7rem;width:.55rem;height:.55rem;border-radius:50%;border:2px solid var(--line)}
+.card h3{font-family:var(--head);font-weight:600;font-size:1.3rem;margin:0 0 .35rem;letter-spacing:.01em}
+.card p,.card ul{margin:0;color:var(--muted);font-size:1rem}
+.card ul{padding-left:1.1rem}
+.card.wide{grid-column:1/-1}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
+.tags li{border:1px solid var(--tape);color:var(--tape);padding:.25rem .8rem;border-radius:.3rem;font-size:.92rem;font-weight:500}
+:root[data-theme="light"] .tags li{color:#6b4700;border-color:#8a5a00}
+.item{border-left:3px solid var(--tape);padding-left:1rem;margin-bottom:1.1rem}
+.item h3{margin:0;font-size:1.1rem}
+.meta{color:var(--muted);font-size:.95rem}
+
+/* Timeline with evidence markers */
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.timeline li{display:flex;gap:1rem;align-items:center}
+.marker{flex:none;width:2.4rem;height:2.4rem;background:var(--tape);color:var(--tape-ink);font-family:var(--head);font-weight:700;font-size:1.3rem;
+  display:grid;place-items:center;clip-path:polygon(50% 0,100% 100%,0 100%);padding-top:.5rem}
+.timeline strong{display:block;line-height:1.2}
+.timeline span{color:var(--muted);font-size:.97rem}
+
+.cv{background:var(--panel);border:1px solid var(--line);border-left:6px solid var(--tape);border-radius:.4rem;padding:1.4rem 1.5rem;max-width:42rem}
+.cv h3{font-family:var(--head);font-size:1.5rem;margin:0 0 .3rem}
+.cv p{color:var(--muted)}
+.contact-list{list-style:none;padding:0;margin:0;display:grid;gap:.6rem}
+.contact-list span{color:var(--muted);display:inline-block;min-width:6rem}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+
+@media(max-width:760px){
+  .hero .wrap{grid-template-columns:1fr}.printwrap{order:-1;max-width:14rem;justify-self:start}
+  .grid{grid-template-columns:1fr;gap:.5rem}.cards{grid-template-columns:1fr}.nav ul{display:none}
+  .tape{margin:0 -1rem}.tape p{font-size:1rem;letter-spacing:.08em}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.scanbox::after{animation:none;top:40%}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Lisa Goswami</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="toggle" id="theme" type="button" aria-label="Switch colour theme">Light</button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Lisa<br>Goswami</h1>
+        <p class="role">First-year BSc Forensic Science student at Lovely Professional University, aiming to become a Scientific Assistant at CFSL.</p>
+        <div class="actions">
+          <a class="btn primary" href="Lisa_Goswami_CV.pdf" target="_blank" rel="noopener">View my CV</a>
+          <a class="btn" href="Lisa_Goswami_CV.pdf" download>Download CV</a>
+          <a class="btn" href="https://www.linkedin.com/in/lisa-goswami-402b633a1" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/Lisa2637" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="printwrap" aria-hidden="true">
+        <div class="print"></div>
+        <div class="scanbox"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tape" aria-hidden="true"><p>Forensic science · Evidence · Analysis · Justice</p></div>
+
+  <section id="about">
+    <div class="wrap grid">
+      <h2>About</h2>
+      <div>
+        <p>I am a first-year student of Forensic Science at Lovely Professional University. I am learning how scientific methods are used to examine evidence and support investigations and justice.</p>
+        <p>My goal is to become a Scientific Assistant at the Central Forensic Science Laboratory (CFSL). I plan to complete my BSc, then an MSc in Forensic Science, and prepare for government examinations.</p>
+        <ul class="tags" style="margin-top:1.25rem">
+          <li>Forensic science</li><li>Crime scene investigation</li><li>Forensic laboratory techniques</li><li>Fingerprint examination</li><li>Digital forensics</li><li>Recruitment exam preparation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap grid">
+      <h2>Education</h2>
+      <div>
+        <div class="item"><h3>BSc Forensic Science</h3><div class="meta">Lovely Professional University, Punjab, India</div><div class="meta">2026 to 2029, currently in first year</div></div>
+        <div class="item"><h3>MSc Forensic Science</h3><div class="meta">Planned after BSc, with a good percentage</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="career">
+    <div class="wrap grid">
+      <h2>Career aspiration</h2>
+      <div>
+        <div class="cards">
+          <div class="card wide"><h3>Career goal and target position</h3><p>Scientific Assistant at the Central Forensic Science Laboratory (CFSL).</p></div>
+          <div class="card"><h3>Required qualification</h3><p>MSc in Forensic Science.</p></div>
+          <div class="card"><h3>Technical and professional skills</h3><p>Advanced forensic laboratory techniques.</p></div>
+          <div class="card"><h3>Certifications and training</h3><ul><li>CSI (Crime Scene Investigation)</li><li>Fingerprint examination</li><li>Digital forensics</li></ul></div>
+          <div class="card"><h3>Internship and practical experience</h3><p>Forensic laboratory internships and crime scene internships.</p></div>
+          <div class="card"><h3>Target organizations</h3><ul class="tags" style="margin-top:.4rem"><li>CFSL</li><li>SFSL</li><li>State Forensic Police Units</li></ul></div>
+          <div class="card"><h3>Short-term goal (1 year)</h3><p>Build strong forensic fundamentals.</p></div>
+          <div class="card"><h3>Long-term goal (5 years)</h3><p>Join CFSL or SFSL as a forensic professional.</p></div>
+          <div class="card wide"><h3>Career preparation strategy</h3><p>Complete my BSc with a good CGPA and internships, then pursue an MSc in Forensic Science while preparing for government examinations.</p></div>
+        </div>
+
+        <h3 style="font-family:var(--head);font-size:1.5rem;margin:2rem 0 1rem">Expected timeline</h3>
+        <ol class="timeline">
+          <li><div class="marker">1</div><div><strong>2026 to 2029</strong><span>Bachelor's degree</span></div></li>
+          <li><div class="marker">2</div><div><strong>MSc with good percentage</strong><span>Master's in Forensic Science</span></div></li>
+          <li><div class="marker">3</div><div><strong>Recruitment preparation</strong><span>Government examinations</span></div></li>
+          <li><div class="marker">4</div><div><strong>2031 onwards</strong><span>Professional career</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <div class="wrap grid">
+      <h2>Curriculum vitae</h2>
+      <div class="cv">
+        <h3>One-page CV</h3>
+        <p>My education, skills, certifications and career plan on a single page.</p>
+        <div class="actions">
+          <a class="btn primary" href="Lisa_Goswami_CV.pdf" target="_blank" rel="noopener">View my CV</a>
+          <a class="btn" href="Lisa_Goswami_CV.pdf" download>Download PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="border-bottom:0">
+    <div class="wrap grid">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:lisagoswami763@gmail.com">lisagoswami763@gmail.com</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/lisa-goswami-402b633a1" target="_blank" rel="noopener">linkedin.com/in/lisa-goswami-402b633a1</a></li>
+        <li><span>GitHub</span><a href="https://github.com/Lisa2637" target="_blank" rel="noopener">github.com/Lisa2637</a></li>
+        <li><span>University</span>Lovely Professional University</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Lisa Goswami</span>
+    <span><a href="https://www.linkedin.com/in/lisa-goswami-402b633a1" target="_blank" rel="noopener">LinkedIn</a> &nbsp;|&nbsp; <a href="https://github.com/Lisa2637" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp; <a href="Lisa_Goswami_CV.pdf" target="_blank" rel="noopener">CV</a></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var light=root.getAttribute('data-theme')==='light';
+    root.setAttribute('data-theme',light?'dark':'light');
+    btn.textContent=light?'Light':'Dark';
+  });
+})();
+</script>
+</body>
+</html>
